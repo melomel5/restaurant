@@ -10,7 +10,7 @@ public class Main {
         Hall hall = new Hall();
         Waiter waiter = new Waiter();
         OrderProcessor orderProcessor = new OrderProcessor();
-        
+
         Customer serhii = new Customer("Serhii");
 
         hall.seatCustomer(serhii, 1);

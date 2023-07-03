@@ -3,8 +3,6 @@ package restaurant;
 import java.util.HashSet;
 import java.util.Set;
 
-import restaurant.staff.Waiter;
-
 public class Hall {
 
     private Set<Table> tables;
