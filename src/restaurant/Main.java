@@ -13,7 +13,7 @@ public class Main {
 
         hall.setWaiter(waiter);
 
-        Customer serhii = new Customer("Serhii", hall);
+        Customer serhii = new Customer("Serhii");
 
         hall.seatCustomer(serhii, 1);
 

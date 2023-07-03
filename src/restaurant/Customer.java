@@ -11,16 +11,12 @@ public class Customer {
 
     private String name;
     private Order order;
-    private Table table;
-    private Hall hall;
     private int tableNumber;
 
-    public Customer(String name, Hall hall) {
+    public Customer(String name) {
         this.name = name;
-        this.hall = hall;
         this.tableNumber = -1;
         this.order = new Order();
-        this.table = new Table(tableNumber);
     }
 
     public String getName() {
@@ -31,13 +27,8 @@ public class Customer {
         this.name = name;
     }
 
-    public void takeASit(int tableNumber) {
-        if (hall.isTableOccupied(tableNumber)) {
-            System.out.println("Impossible seat to table is #" + tableNumber);
-        } else {
-            this.tableNumber = tableNumber;
-            System.out.println("Your current table is #" + tableNumber);
-        }
+    public void setTableNumber(int tableNumber) {
+        this.tableNumber = tableNumber;
     }
 
     public void placeOrder() {
@@ -76,6 +67,6 @@ public class Customer {
     }
 
     public int getTableNumber() {
-        return table.getNumber();
+        return tableNumber;
     }
 }

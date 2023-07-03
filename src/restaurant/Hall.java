@@ -33,7 +33,7 @@ public class Hall {
             Table table = getTableByNumber(tableNumber);
             if (table.isFree()) {
                 System.out.printf("Table #%d is free\n", tableNumber);
-                customer.takeASit(tableNumber);
+                customer.setTableNumber(tableNumber);
                 table.setFree(false);
                 return true;
             } else {
