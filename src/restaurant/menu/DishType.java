@@ -4,6 +4,6 @@ public enum DishType {
     COLD,
     HOT,
     DESSERT,
-    BAR,
+    DRINK,
     UNKNOWN
 }

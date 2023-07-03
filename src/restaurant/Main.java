@@ -11,12 +11,11 @@ public class Main {
         Waiter waiter = new Waiter();
         OrderProcessor orderProcessor = new OrderProcessor();
 
-        waiter.setHall(hall);
         hall.setWaiter(waiter);
 
         Customer serhii = new Customer("Serhii", hall);
 
-        waiter.seatCustomer(serhii, 1);
+        hall.seatCustomer(serhii, 1);
 
         serhii.placeOrder();
         serhii.showOrder();

@@ -1,11 +1,14 @@
 package restaurant.order;
 
-import static restaurant.menu.DishType.BAR;
+import static restaurant.menu.DishType.DRINK;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import restaurant.bar.Bar;
 import restaurant.kitchen.Kitchen;
 import restaurant.menu.Dish;
-import restaurant.staff.BartenderImpl;
+import restaurant.staff.Bartender;
 import restaurant.staff.Chef;
 import restaurant.staff.ColdKitchenChef;
 import restaurant.staff.HotKitchenChef;
@@ -14,23 +17,22 @@ import restaurant.staff.interfaces.Cook;
 public class OrderProcessor {
     private Kitchen kitchen;
     private Bar bar;
-    private BartenderImpl bartender;
-    private Cook coldKitchenChef;
-    private Cook hotKitchenChef;
-    private Cook chef;
+    private Bartender bartender;
+    private List<Cook> cooks;
 
     public OrderProcessor() {
-        coldKitchenChef = new ColdKitchenChef();
-        hotKitchenChef = new HotKitchenChef();
-        chef = new Chef();
-        bartender = new BartenderImpl();
-        kitchen = new Kitchen(coldKitchenChef, hotKitchenChef, chef);
+        bartender = new Bartender();
+        cooks = new ArrayList<>();
+        cooks.add(new ColdKitchenChef());
+        cooks.add(new HotKitchenChef());
+        cooks.add(new Chef());
+        kitchen = new Kitchen(cooks);
         bar = new Bar(bartender);
     }
 
     public void processOrder(Order order) {
         for (Dish dish : order.getDishes()) {
-            if (dish.getType().equals(BAR)) {
+            if (dish.getType().equals(DRINK)) {
                 bar.prepareCocktail(dish);
             } else {
                 kitchen.prepareDish(dish);

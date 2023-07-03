@@ -7,17 +7,7 @@ import restaurant.order.Order;
 
 public class Waiter extends Staff {
 
-    private Hall hall;
-
     public Waiter() {
-    }
-
-    public void setHall(Hall hall) {
-        this.hall = hall;
-    }
-
-    public void seatCustomer(Customer customer, int tableNumber) {
-        hall.seatCustomer(customer, tableNumber);
     }
 
     public void serveOrder(Order order, int tableNumber) {

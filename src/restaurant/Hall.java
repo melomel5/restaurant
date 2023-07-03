@@ -17,6 +17,7 @@ public class Hall {
         for (int i = 1; i <= NUMBER_OF_TABLES; i++) {
             tables.add(new Table(i));
         }
+        waiter = new Waiter();
     }
 
     public void showFreeTables() {
