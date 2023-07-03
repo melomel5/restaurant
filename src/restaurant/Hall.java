@@ -8,8 +8,6 @@ import restaurant.staff.Waiter;
 public class Hall {
 
     private Set<Table> tables;
-    private Waiter waiter;
-
     private final int NUMBER_OF_TABLES = 10;
 
     public Hall() {
@@ -17,7 +15,6 @@ public class Hall {
         for (int i = 1; i <= NUMBER_OF_TABLES; i++) {
             tables.add(new Table(i));
         }
-        waiter = new Waiter();
     }
 
     public void showFreeTables() {
@@ -56,9 +53,5 @@ public class Hall {
             }
         }
         return null;
-    }
-
-    public void setWaiter(Waiter waiter) {
-        this.waiter = waiter;
     }
 }
