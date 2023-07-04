@@ -15,6 +15,6 @@ public class Chef extends Staff implements Cook {
 
     @Override
     public boolean canCook(DishType dishType) {
-        return true; // can cook any dishes
+        return dishType != DishType.DRINK; // can cook any dishes
     }
 }
